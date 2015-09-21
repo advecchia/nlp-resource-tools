@@ -1,0 +1,1 @@
+python -m pwiz -u mestrado -P mestrado -e mysql mestrado > data_storage.py
