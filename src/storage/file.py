@@ -53,3 +53,6 @@ class File(object):
     @language.setter
     def language(self, language):
         self._language = language
+
+    def __str__(self):
+        return 'File: id={}, parallel_file_id={}, name={}, size={}, modified={}, language={}'.format(self.id, self.parallel_file_id, self.name, self.size, self.modified, self.language)

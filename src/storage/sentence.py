@@ -37,3 +37,6 @@ class Sentence(object):
     @order_in_paragraph.setter
     def order_in_paragraph(self, order_in_paragraph):
         self._order_in_paragraph = order_in_paragraph
+
+    def __str__(self):
+        return 'Sentence: id={}, paragraph_id={}, number_of_words={}, order_in_paragraph={}'.format(self.id, self.paragraph_id, self.number_of_words, self.order_in_paragraph)

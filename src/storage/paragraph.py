@@ -29,3 +29,6 @@ class Paragraph(object):
     @file_id.setter
     def file_id(self, file_id):
         self._file_id = file_id
+
+    def __str__(self):
+        return 'Paragraph: id={}, order_in_file={}, file_id={}'.format(self.id, self.order_in_file, self.file_id)

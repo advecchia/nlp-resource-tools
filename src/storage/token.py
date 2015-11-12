@@ -85,3 +85,6 @@ class Token(object):
     @synonyms.setter
     def synonyms(self, synonyms):
         self._synonyms = synonyms
+
+    def __str__(self):
+        return 'Token: id={}, sentence_id={}, token={}, lemma={}, pos={}, syllables={}, order_in_sentence={}, tf_idf={}, length={}, synonyms={}'.format(self.id, self.sentence_id, self.token, self.lemma, self.pos, self.syllables, self.order_in_sentence, self.tf_idf, self.length, self.synonyms)
