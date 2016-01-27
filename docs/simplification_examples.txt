@@ -1,0 +1,16 @@
+(noun) German shepherd (Pastor alemão, menos complexo para mais complexo)
+    dog, puppy, pup, whelp
+    cur (wrong sense)
+    (large, guide, breed, guard, police) dog (multiword)
+
+(sentence) Eu vi uma casa colonial de madeira desgastada.
+
+    Eu divisei uma morada rústica de madeira enfraquecida. (complex)
+    Eu vi uma casa antiga de madeira desgastada.
+    Eu vi uma casa colonial de madeira corroída.
+    Eu vi uma casa colonial de madeira.
+    Eu vi uma casa colonial.
+    Eu vi uma casa. (simple)
+    
+    Eu vi. (lose of sense)
+    Eu enxerguei uma casa na colina. (mix and lose of sense)

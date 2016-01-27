@@ -1,0 +1,12 @@
+The best thing for your health is not smoking.
+    Synonyms:
+        1. The best thing for your well-being is not smoking.
+        2. The best thing for your welfare is not smoking.
+        3. Smoking is a bad idea.
+        4. Smoking is a bad practice.
+        5. Be careful of your health, do not smoke.
+
+    Antonyms:
+        1. The worst thing for your health is not smoking.
+        2. The best thing for your health is smoking.
+        3. Smoking is a good idea.
