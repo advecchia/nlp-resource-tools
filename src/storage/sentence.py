@@ -1,10 +1,10 @@
 import logging as log
 
 class Sentence(object):
-    def __init__(self, id, paragraph_id, number_of_words, order_in_paragraph):
+    def __init__(self, identifier, paragraph_id, number_of_words, order_in_paragraph):
         method_name = "Sentence"
         log.info('{}: initialization.'.format(method_name))
-        self._id = id
+        self._id = identifier
         self._paragraph_id = paragraph_id
         self._number_of_words = number_of_words
         self._order_in_paragraph = order_in_paragraph
@@ -14,8 +14,8 @@ class Sentence(object):
     def id(self):
         return self._id
     @id.setter
-    def id(self, id):
-        self._id = id
+    def id(self, identifier):
+        self._id = identifier
 
     @property
     def paragraph_id(self):

@@ -1,27 +1,20 @@
 import logging as log
 
 class Paragraph(object):
-    def __init__(self, id, order_in_file, file_id):
+    def __init__(self, identifier, file_id, order_in_file):
         method_name = "Paragraph"
         log.info('{}: initialization.'.format(method_name))
-        self._id = id
-        self._order_in_file = order_in_file
+        self._id = identifier
         self._file_id = file_id
+        self._order_in_file = order_in_file
         log.info('{}: end.'.format(method_name))
 
     @property
     def id(self):
         return self._id
     @id.setter
-    def id(self, id):
-        self._id = id
-
-    @property
-    def order_in_file(self):
-        return self._order_in_file
-    @order_in_file.setter
-    def order_in_file(self, order_in_file):
-        self._order_in_file = order_in_file
+    def id(self, identifier):
+        self._id = identifier
 
     @property
     def file_id(self):
@@ -30,5 +23,12 @@ class Paragraph(object):
     def file_id(self, file_id):
         self._file_id = file_id
 
+    @property
+    def order_in_file(self):
+        return self._order_in_file
+    @order_in_file.setter
+    def order_in_file(self, order_in_file):
+        self._order_in_file = order_in_file
+
     def __str__(self):
-        return 'Paragraph: id={}, order_in_file={}, file_id={}'.format(self.id, self.order_in_file, self.file_id)
+        return 'Paragraph: id={}, file_id={}, order_in_file={}'.format(self.id, self.file_id, self.order_in_file)

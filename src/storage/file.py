@@ -1,23 +1,23 @@
 import logging as log
 
 class File(object):
-    def __init__(self, id, parallel_file_id, name, size, modified, language):
+    def __init__(self, identifier, parallel_file_id, name, size, modified, language_id):
         method_name = "File"
         log.info('{}: initialization.'.format(method_name))
-        self._id = id
+        self._id = identifier
         self._parallel_file_id = parallel_file_id
         self._name = name
         self._size = size
         self._modified= modified
-        self._language = language
+        self._language_id = language_id
         log.info('{}: end.'.format(method_name))
 
     @property
     def id(self):
         return self._id
     @id.setter
-    def id(self, id):
-        self._id = id
+    def id(self, identifier):
+        self._id = identifier
 
     @property
     def parallel_file_id(self):
@@ -48,11 +48,11 @@ class File(object):
         self._modified = modified
 
     @property
-    def language(self):
-        return self._language
-    @language.setter
-    def language(self, language):
-        self._language = language
+    def language_id(self):
+        return self._language_id
+    @language_id.setter
+    def language_id(self, language_id):
+        self._language_id = language_id
 
     def __str__(self):
-        return 'File: id={}, parallel_file_id={}, name={}, size={}, modified={}, language={}'.format(self.id, self.parallel_file_id, self.name, self.size, self.modified, self.language)
+        return 'File: id={}, parallel_file_id={}, name={}, size={}, modified={}, language_id={}'.format(self.id, self.parallel_file_id, self.name, self.size, self.modified, self.language_id)

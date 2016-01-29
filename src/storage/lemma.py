@@ -1,12 +1,11 @@
 import logging as log
 
-class Token(object):
-    def __init__(self, identifier, token, lemma_id, pos_id, syllables, length):
-        method_name = "Token"
+class Lemma(object):
+    def __init__(self, identifier, lemma, pos_id, syllables, length):
+        method_name = "Lemma"
         log.info('{}: initialization.'.format(method_name))
         self._id = identifier
-        self._token = token
-        self._lemma_id = lemma_id
+        self._lemma = lemma
         self._pos_id = pos_id
         self._syllables = syllables
         self._length = length
@@ -20,19 +19,12 @@ class Token(object):
         self._id = identifier
         
     @property
-    def token(self):
-        return self._token
-    @token.setter
-    def token(self, token):
-        self._token = token
-        
-    @property
-    def lemma_id(self):
-        return self._lemma_id
-    @lemma_id.setter
-    def lemma_id(self, lemma_id):
-        self._lemma_id = lemma_id
-        
+    def lemma(self):
+        return self._lemma
+    @lemma.setter
+    def lemma(self, lemma):
+        self._lemma = lemma
+
     @property
     def pos_id(self):
         return self._pos_id
@@ -55,4 +47,4 @@ class Token(object):
         self._length = length
 
     def __str__(self):
-        return 'Token: id={}, token={}, lemma_id={}, pos_id={}, syllables={}, length={}'.format(self.id, self.token, self.lemma_id, self.pos_id, self.syllables, self.length)
+        return 'Lemma: id={}, lemma={}, pos_id={}, syllables={}, length={}'.format(self.id, self.lemma, self.pos_id, self.syllables, self.length)
