@@ -1,1 +1,1 @@
-__all__ = ['dictionary', 'paraphrase', 'parser', 'statistical', 'thesaurus', 'data']
+__all__ = ['data', 'dictionary', 'paraphrase', 'parser', 'statistical', 'thesauri']
