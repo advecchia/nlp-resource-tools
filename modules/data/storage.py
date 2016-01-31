@@ -60,7 +60,6 @@ class Sentences(BaseModel):
     paragraph_id = pw.ForeignKeyField(db_column='paragraph_id', rel_model=Paragraphs, to_field='id')
     number_of_words = pw.IntegerField()
     order_in_paragraph = pw.IntegerField()
-    
 
     class Meta:
         db_table = 'sentences'
@@ -81,7 +80,7 @@ class Senses(BaseModel):
     token_id = pw.ForeignKeyField(db_column='token_id', rel_model=Tokens, related_name='tokens_token_set', to_field='id')
     related_token_id = pw.ForeignKeyField(db_column='related_token_id', rel_model=Tokens, to_field='id')
     sense_type = pw.CharField()
-    
+    correlation = pw.FloatField()
 
     class Meta:
         db_table = 'senses'
