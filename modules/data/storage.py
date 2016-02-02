@@ -28,7 +28,7 @@ class Files(BaseModel):
     class Meta:
         db_table = 'files'
 
-class PartOfSpeech(BaseModel):
+class PartsOfSpeech(BaseModel):
     id = pw.IntegerField(db_column='id', primary_key=True)
     acronym = pw.CharField(max_length=10)
     name = pw.CharField(max_length=100)
@@ -40,7 +40,7 @@ class PartOfSpeech(BaseModel):
 class Lemmas(BaseModel):
     id = pw.BigIntegerField(primary_key=True)
     lemma = pw.TextField()
-    pos_id = pw.ForeignKeyField(db_column='pos_id', rel_model=PartOfSpeech, to_field='id')
+    pos_id = pw.ForeignKeyField(db_column='pos_id', rel_model=PartsOfSpeech, to_field='id')
     syllables = pw.TextField()
     length = pw.IntegerField()
 
@@ -68,7 +68,7 @@ class Tokens(BaseModel):
     id = pw.BigIntegerField(primary_key=True)
     token = pw.TextField()
     lemma_id = pw.ForeignKeyField(db_column='lemma_id', rel_model=Lemmas, to_field='id')
-    pos_id = pw.ForeignKeyField(db_column='pos_id', rel_model=PartOfSpeech, to_field='id')
+    pos_id = pw.ForeignKeyField(db_column='pos_id', rel_model=PartsOfSpeech, to_field='id')
     order_in_sentence = pw.IntegerField()
     syllables = pw.TextField()
     length = pw.IntegerField()
