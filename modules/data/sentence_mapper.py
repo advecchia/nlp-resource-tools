@@ -42,11 +42,11 @@ class SentenceMapper(CommonMapper):
             log.info('{}: end.'.format(method_name))
             raise Exception('SentenceDoesNotExist errno={}: strerror{}.'.format(e.errno, e.strerror))
 
-    def gets(self):
+    def gets(self, paragraph_id):
         method_name = 'SentenceMapper.gets'
         log.info('{}: initialization.'.format(method_name))
         sentences = []
-        for db_sentence in Sentences.select():
+        for db_sentence in Sentences.select().where(Sentences.paragraph_id==paragraph_id):
             sentences.append(self.mapper(db_sentence));
         log.info('{}: end.'.format(method_name))
         return sentences

@@ -12,8 +12,8 @@ class PartOfSpeechMapper(CommonMapper):
     def insert(self, pos_object):
         method_name = 'PartOfSpeechMapper.insert'
         log.info('{}: initialization.'.format(method_name))
-        query = PartsOfSpeech.insert(acronym=pos_object.acronym, 
-                             name=pos_object.name,
+        query = PartsOfSpeech.insert(tag=pos_object.tag, 
+                             description=pos_object.description,
                              language_id=pos_object.language_id)
         pos_object.id = query.execute() # Return new id
         log.info('{}: end.'.format(method_name))
@@ -22,8 +22,8 @@ class PartOfSpeechMapper(CommonMapper):
     def update(self, pos_object):
         method_name = 'PartOfSpeechMapper.update'
         log.info('{}: initialization.'.format(method_name))
-        query = PartsOfSpeech.update(acronym=pos_object.acronym, 
-                             name=pos_object.name,
+        query = PartsOfSpeech.update(tag=pos_object.tag, 
+                             description=pos_object.description,
                              language_id=pos_object.language_id).where(PartsOfSpeech.id==pos_object.id)
         log.info('{}: end.'.format(method_name))
         if query.execute() != 1: return True
@@ -55,6 +55,6 @@ class PartOfSpeechMapper(CommonMapper):
         method_name = 'PartOfSpeechMapper.mapper'
         log.info('{}: initialization.'.format(method_name))
         log.info('{}: end.'.format(method_name))
-        return PartOfSpeech(identifier=db_pos.id, acronym=db_pos.acronym, 
-                             name=db_pos.name,
+        return PartOfSpeech(identifier=db_pos.id, tag=db_pos.tag, 
+                             description=db_pos.description,
                              language_id=db_pos.language_id)

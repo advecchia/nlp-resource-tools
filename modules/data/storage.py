@@ -30,8 +30,8 @@ class Files(BaseModel):
 
 class PartsOfSpeech(BaseModel):
     id = pw.IntegerField(db_column='id', primary_key=True)
-    acronym = pw.CharField(max_length=10)
-    name = pw.CharField(max_length=100)
+    tag = pw.CharField(max_length=10)
+    description = pw.CharField(max_length=100)
     language_id = pw.ForeignKeyField(db_column='language_id', rel_model=Languages, to_field='id')
 
     class Meta:

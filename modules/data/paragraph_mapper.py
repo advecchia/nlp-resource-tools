@@ -40,11 +40,11 @@ class ParagraphMapper(CommonMapper):
             log.info('{}: end.'.format(method_name))
             raise Exception('ParagraphDoesNotExist errno={}: strerror{}.'.format(e.errno, e.strerror))
 
-    def gets(self):
+    def gets(self, file_id):
         method_name = 'ParagraphMapper.gets'
         log.info('{}: initialization.'.format(method_name))
         paragraphs = []
-        for db_paragraph in Paragraphs.select():
+        for db_paragraph in Paragraphs.select().where(Paragraphs.file_id==file_id):
             paragraphs.append(self.mapper(db_paragraph));
         log.info('{}: end.'.format(method_name))
         return paragraphs

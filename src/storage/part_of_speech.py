@@ -1,12 +1,12 @@
 import logging as log
 
 class PartOfSpeech(object):
-    def __init__(self, identifier, acronym, name, language_id):
+    def __init__(self, identifier, tag, description, language_id):
         method_name = "PartOfSpeech"
         log.info('{}: initialization.'.format(method_name))
         self._id = identifier
-        self._acronym = acronym
-        self._name = name
+        self._tag = tag
+        self._description = description
         self._language_id = language_id
         log.info('{}: end.'.format(method_name))
 
@@ -18,18 +18,18 @@ class PartOfSpeech(object):
         self._id = identifier
 
     @property
-    def acronym(self):
-        return self._acronym
-    @acronym.setter
-    def acronym(self, acronym):
-        self._acronym = acronym
+    def tag(self):
+        return self._tag
+    @tag.setter
+    def tag(self, tag):
+        self._tag = tag
 
     @property
-    def name(self):
-        return self._name
-    @name.setter
-    def name(self, name):
-        self._name = name
+    def description(self):
+        return self._description
+    @description.setter
+    def description(self, description):
+        self._description = description
 
     @property
     def language_id(self):
@@ -39,4 +39,4 @@ class PartOfSpeech(object):
         self._language_id = language_id
 
     def __str__(self):
-        return 'PartOfSpeech: id={}, acronym={}, name={}, language_id={}'.format(self.id, self.acronym, self.name, self.language_id)
+        return 'PartOfSpeech: id={}, tag={}, description={}, language_id={}'.format(self.id, self.tag, self.description, self.language_id)
