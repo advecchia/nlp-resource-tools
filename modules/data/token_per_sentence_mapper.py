@@ -42,11 +42,11 @@ class TokenPerSentenceMapper(CommonMapper):
             log.info('{}: end.'.format(method_name))
             raise Exception('TokenDoesNotExist errno={}: strerror{}.'.format(e.errno, e.strerror))
 
-    def gets(self):
+    def gets(self, sentence_id):
         method_name = 'TokenPerSentenceMapper.gets'
         log.info('{}: initialization.'.format(method_name))
         tokens_per_sentence = []
-        for db_token_per_sentence in TokensPerSentence.select():
+        for db_token_per_sentence in TokensPerSentence.select().where(TokensPerSentence.sentence_id==sentence_id):
             tokens_per_sentence.append(self.mapper(db_token_per_sentence));
         log.info('{}: end.'.format(method_name))
         return tokens_per_sentence

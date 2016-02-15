@@ -42,11 +42,11 @@ class TokenPerFileMapper(CommonMapper):
             log.info('{}: end.'.format(method_name))
             raise Exception('TokenDoesNotExist errno={}: strerror{}.'.format(e.errno, e.strerror))
 
-    def gets(self):
+    def gets(self, file_id):
         method_name = 'TokenPerFileMapper.gets'
         log.info('{}: initialization.'.format(method_name))
         tokens_per_file = []
-        for db_token_per_file in TokensPerFile.select():
+        for db_token_per_file in TokensPerFile.select().where(TokensPerFile.file_id==file_id):
             tokens_per_file.append(self.mapper(db_token_per_file));
         log.info('{}: end.'.format(method_name))
         return tokens_per_file

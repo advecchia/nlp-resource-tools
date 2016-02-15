@@ -36,7 +36,7 @@ class TokenMapper(CommonMapper):
     def get(self, token_id):
         method_name = 'TokenMapper.get'
         log.info('{}: initialization.'.format(method_name))
-        
+
         try:
             token_object = Tokens.get(Tokens.id==token_id)
             log.info('{}: end.'.format(method_name))
@@ -50,6 +50,7 @@ class TokenMapper(CommonMapper):
         method_name = 'TokenMapper.gets'
         log.info('{}: initialization.'.format(method_name))
         tokens = []
+
         for db_token in Tokens.select():
             tokens.append(self.mapper(db_token));
         log.info('{}: end.'.format(method_name))
